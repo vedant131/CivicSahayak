@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CivicSahayak — नागरिक सहायक</title>
+  <meta name="author" content="Vedant Shinde">
+  <meta name="description" content="CivicSahayak — A civic rights portal for Indian citizens. Access government schemes, know your rights, file complaints, and get document guidance.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="flag"><div></div><div></div><div></div></div>
+
+<div class="flag"><div></div><div></div><div></div></div>
+<div class="app">
+
+<!-- ═══ SIDEBAR ═══ -->
+<aside class="sb">
+  <div class="sb-blob sb-blob-1"></div><div class="sb-blob sb-blob-2"></div>
+  <div class="sb-head">
+    <div class="sb-brand">
+      <div class="sbm">⚖️</div>
+      <div class="sbn">Civic<em>Sahayak</em></div>
+    </div>
+    <div class="sb-tag" id="sb-tag-el">नागरिक सहायक · Your Rights, Simplified</div>
+  </div>
+  <nav class="sb-nav">
+    <div class="slbl">Main</div>
+    <div class="ni active" onclick="go('home')" data-p="home"><div class="ni-ico">🏛️</div>Dashboard</div>
+    <div class="ni" onclick="go('eligibility')" data-p="eligibility"><div class="ni-ico">🎯</div>Scheme Eligibility</div>
+    <div class="ni" onclick="go('documents')" data-p="documents"><div class="ni-ico">📄</div>Document Guide</div>
+    <div class="ni" onclick="go('rights')" data-p="rights"><div class="ni-ico">📜</div>Know Your Rights</div>
+    <div class="ni" onclick="go('complaint')" data-p="complaint"><div class="ni-ico">📋</div>File Complaint</div>
+    <div class="slbl">Legal & Support</div>
+    <div class="ni" onclick="go('legal')" data-p="legal"><div class="ni-ico">⚖️</div>Legal Guidance</div>
+    <div class="ni" onclick="go('grievance')" data-p="grievance"><div class="ni-ico">🗂️</div>Grievance Portals</div>
+    <div class="ni" onclick="go('tracker')" data-p="tracker"><div class="ni-ico">🔍</div>NSP Status Guide</div>
+    <div class="ni" onclick="go('helplines')" data-p="helplines"><div class="ni-ico">📞</div>Helplines</div>
+    <div class="ni" onclick="go('ai')" data-p="ai"><div class="ni-ico">🤖</div>AI Assistant</div>
+
+  </nav>
+  <div class="sb-foot">
+    <div class="sb-notice">
+      <div class="sbn2" id="sb-notice-h">🇮🇳 Free for all citizens</div>
+      <div class="sbn3" id="sb-notice-b">All information based on official government sources. Free legal aid via NALSA: 15100</div>
+    </div>
+  </div>
+</aside>
+
+<!-- ═══ MAIN ═══ -->
+<div class="main">
+  <div class="abar">
+    <div class="ab-l">
+      <span class="ab-bc">CivicSahayak ›</span>
+      <span class="ab-title" id="abar-title">Dashboard</span>
+    </div>
+    <div class="ab-r">
+      <div class="lang-switcher"><button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button><button class="lang-btn" data-lang="hl" onclick="setLang('hl')">HI-EN</button><button class="lang-btn" data-lang="hi" onclick="setLang('hi')">हि</button></div><button class="abbtn" id="btn-helplines" onclick="go('helplines')">📞 Helplines</button>
+      <button class="abbtn" id="btn-documents" onclick="go('documents')">📄 Documents</button>
+      <button class="abbtn pri" id="btn-ai" onclick="go('ai')">🤖 Ask AI</button>
+    </div>
+  </div>
+
+  <div class="ticker-wrap" aria-hidden="true"><div class="ticker-inner">
+    <span class="ticker-item">📚 NSP Scholarship — Apply at scholarships.gov.in</span>
+    <span class="ticker-sep">◆</span>
+    <span class="ticker-item">⚖️ Free legal aid — Call NALSA: 15100</span>
+    <span class="ticker-sep">◆</span>
+    <span class="ticker-item">🛡️ SC/ST Helpline: 1800-11-6090</span>
+    <span class="ticker-sep">◆</span>
+    <span class="ticker-item">📝 RTI fee waived for BPL citizens — rtionline.gov.in</span>
+    <span class="ticker-sep">◆</span>
+    <span class="ticker-item">♀️ Women Helpline 24×7: 181</span>
+    <span class="ticker-sep">◆</span>
+    <span class="ticker-item">🔒 Cyber Crime: 1930</span>
+    <span class="ticker-sep">◆</span>
+    <span class="ticker-item">📚 NSP Scholarship — Apply at scholarships.gov.in</span>
+  </div></div>
+<!-- ══ PANEL: HOME ══ -->
+  <div class="panel active" id="p-home">
+    <div class="pg">
+      <div class="wb"><div class="wb-blob-a"></div><div class="wb-blob-b"></div><div class="wb-grid-lines"></div>
+        <div class="wb-badge" id="hero-badge">🇮🇳 CivicSahayak — नागरिक सहायक</div>
+        <div class="wb-h" id="hero-h">Know Your Rights.<br><em>Access What's Yours.</em></div>
+        <div class="wb-sub" id="hero-sub">From scholarship applications to FIR filing, free legal aid to RTI — your complete guide to navigating India's civic systems. No bureaucracy jargon.</div>
+        <div class="wb-btns">
+          <button class="wbtn wbtn-w" id="hero-btn1" onclick="go('eligibility')">🎯 Check Eligibility</button>
+          <button class="wbtn wbtn-r" id="hero-btn2" onclick="go('documents')">📄 Document Guide</button>
+          <button class="wbtn wbtn-o" id="hero-btn3" onclick="go('ai')">🤖 Ask CivicAI</button>
+        </div>
+      </div>
+
+      <!-- TOP REAL PROBLEMS -->
+      <div>
+        <div class="lbl-tag" id="prob-label">⚠️ Common Problems We Solve</div>
+        <div class="grid3">
+          <div class="alert-card" style="background:#FFF8F0;border-color:#F5C89B;">
+            <div class="ac-ico">📄</div>
+            <div><div class="ac-t" id="prob1-t" style="color:#A0630A;">Document Rejections</div><div class="ac-d" id="prob1-d" style="color:#7A4F10;">NSP applications failing due to wrong income/caste certificate format? Our guide walks you through every step.</div></div>
+          </div>
+          <div class="alert-card" style="background:#F0F5FF;border-color:#9BB5F5;">
+            <div class="ac-ico">💰</div>
+            <div><div class="ac-t" id="prob2-t" style="color:#2C3E7A;">Scholarship Not Received</div><div class="ac-d" id="prob2-d" style="color:#3D527A;">DBT transfer delayed or Aadhaar seeding issues? Track your NSP application status step by step.</div></div>
+          </div>
+          <div class="alert-card" style="background:#FFF0F0;border-color:#F5A0A0;">
+            <div class="ac-ico">🚫</div>
+            <div><div class="ac-t" id="prob3-t" style="color:#C0392B;">Rights Violations</div><div class="ac-d" id="prob3-d" style="color:#A03030;">Discrimination, police refusal to file FIR, scheme denied? Know exactly where to complain.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stc" style="--c:var(--or);"><div class="stc-ico">🎯</div><div class="stc-val" style="color:var(--or);" data-target="23">23</div><div class="stc-lbl" id="stat1-lbl">Schemes listed</div></div>
+        <div class="stc"><div class="stc-ico">📄</div><div class="stc-val" style="color:var(--blu);" data-target="8">8</div><div class="stc-lbl" id="stat2-lbl">Document guides</div></div>
+        <div class="stc"><div class="stc-ico">⚖️</div><div class="stc-val" style="color:var(--grn);">Free</div><div class="stc-lbl" id="stat3-lbl">Legal aid via NALSA</div></div>
+        <div class="stc"><div class="stc-ico">📞</div><div class="stc-val" style="color:var(--yel);" data-target="12">12</div><div class="stc-lbl" id="stat4-lbl">Helplines</div></div>
+      </div>
+
+      <div class="grid3">
+        <div class="ftile" onclick="go('eligibility')"><div class="ft-ico" style="background:var(--or3);">🎯</div><div class="ft-t" id="ft1-t">Scheme Eligibility Check</div><div class="ft-d" id="ft1-d">Answer 5 questions. Get a personalised list of schemes you qualify for.</div><div class="ft-arr">→</div></div>
+        <div class="ftile" onclick="go('documents')"><div class="ft-ico" style="background:var(--blu3);">📄</div><div class="ft-t" id="ft2-t">Document Guide</div><div class="ft-d" id="ft2-d">Step-by-step: how to get caste certificate, income certificate, domicile, and more.</div><div class="ft-arr">→</div></div>
+        <div class="ftile" onclick="go('complaint')"><div class="ft-ico" style="background:var(--grnl);">📋</div><div class="ft-t" id="ft3-t">Complaint Wizard</div><div class="ft-d" id="ft3-d">Tell us your issue. We'll tell you exactly which portal to use and what to submit.</div><div class="ft-arr">→</div></div>
+        <div class="ftile" onclick="go('tracker')"><div class="ft-ico" style="background:var(--yell);">🔍</div><div class="ft-t" id="ft4-t">NSP Status Guide</div><div class="ft-d" id="ft4-d">Scholarship stuck? Understand each verification stage and what to do if stuck.</div><div class="ft-arr">→</div></div>
+        <div class="ftile" onclick="go('grievance')"><div class="ft-ico" style="background:var(--purl);">🗂️</div><div class="ft-t" id="ft5-t">Grievance Portals</div><div class="ft-d" id="ft5-d">All official portals — CPGRAMS, NHRC, NCW, NCM — in one place with direct links.</div><div class="ft-arr">→</div></div>
+        <div class="ftile" onclick="go('ai')"><div class="ft-ico" style="background:var(--blu3);">🤖</div><div class="ft-t" id="ft6-t">Ask CivicAI</div><div class="ft-d" id="ft6-d">Instant answers about rights, schemes, legal options in plain Hindi/English.</div><div class="ft-arr">→</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PANEL: ELIGIBILITY ENGINE ══ -->
+  <div class="panel" id="p-eligibility">
+    <div class="elig-wrap">
+      <div class="section-hd">
+        <div class="lbl-tag">🎯 Smart Filter</div>
+        <div class="ph">Scheme Eligibility Check</div>
+        <div class="ps">Fill in your profile. We'll instantly show every scheme you qualify for — no guessing.</div>
+      </div>
+      <div class="elig-form">
+        <div class="elig-grid">
+          <div class="fg"><label class="flbl">Category</label>
+            <select class="finp" id="e-cat">
+              <option value="">Select category</option>
+              <option value="sc">Scheduled Caste (SC)</option>
+              <option value="st">Scheduled Tribe (ST)</option>
+              <option value="obc">Other Backward Class (OBC)</option>
+              <option value="ebc">Economically Backward Class (EBC)</option>
+              <option value="dnt">Denotified Tribe (DNT)</option>
+              <option value="minority">Minority (Muslim/Christian/Sikh/Buddhist/Jain/Parsi)</option>
+              <option value="general">General / EWS</option>
+              <option value="pwd">Person with Disability (PwD)</option>
+            </select>
+          </div>
+          <div class="fg"><label class="flbl">Gender</label>
+            <select class="finp" id="e-gen">
+              <option value="">Select gender</option>
+              <option value="female">Female</option>
+              <option value="male">Male</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="fg"><label class="flbl">Annual Family Income</label>
+            <select class="finp" id="e-income">
+              <option value="">Select income range</option>
+              <option value="u1">Below ₹1 lakh</option>
+              <option value="u25">₹1–2.5 lakh</option>
+              <option value="u6">₹2.5–6 lakh</option>
+              <option value="u8">₹6–8 lakh</option>
+              <option value="a8">Above ₹8 lakh</option>
+            </select>
+          </div>
+          <div class="fg"><label class="flbl">Current Education Level</label>
+            <select class="finp" id="e-edu">
+              <option value="">Select level</option>
+              <option value="school">Class 1–8 (Pre-Matric)</option>
+              <option value="matric">Class 9–10</option>
+              <option value="inter">Class 11–12 (Intermediate)</option>
+              <option value="ug">Undergraduate (BA/BSc/BCom/BTech)</option>
+              <option value="pg">Postgraduate (MA/MSc/MTech)</option>
+              <option value="research">M.Phil / PhD (Research)</option>
+              <option value="professional">Professional (MBBS/LLB/CA etc.)</option>
+            </select>
+          </div>
+          <div class="fg"><label class="flbl">Disability Status</label>
+            <select class="finp" id="e-dis">
+              <option value="none">No disability</option>
+              <option value="below40">Disability &lt; 40%</option>
+              <option value="above40">Disability ≥ 40%</option>
+            </select>
+          </div>
+          <div class="fg"><label class="flbl">Employment Seeking?</label>
+            <select class="finp" id="e-emp">
+              <option value="no">No</option>
+              <option value="yes">Yes — looking for skill training / job</option>
+            </select>
+          </div>
+        </div>
+        <div class="elig-cta">
+          <button class="elig-btn" onclick="runEligibility()">🎯 Find My Schemes</button>
+          <span style="font-size:12.5px;color:var(--t3);">Shows all central government schemes you qualify for</span>
+        </div>
+      </div>
+      <div class="elig-results" id="elig-results" style="display:none;">
+        <div class="er-hd">
+          <div class="er-title">Matching Schemes</div>
+          <div class="er-count" id="er-cnt">0 schemes found</div>
+        </div>
+        <div class="er-grid" id="er-grid"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PANEL: DOCUMENT GUIDE ══ -->
+  <div class="panel" id="p-documents">
+    <div class="doc-guide">
+      <div>
+        <div class="lbl-tag">📄 Step-by-Step</div>
+        <div class="ph">Document Guide</div>
+        <div class="ps">The #1 reason scholarship applications fail is wrong or missing documents. Here's exactly how to get each certificate.</div>
+      </div>
+      <div class="doc-tabs">
+        <div class="dt act" onclick="docTab('caste',this)">🏷️ Caste Certificate</div>
+        <div class="dt" onclick="docTab('income',this)">💰 Income Certificate</div>
+        <div class="dt" onclick="docTab('domicile',this)">🏠 Domicile Certificate</div>
+        <div class="dt" onclick="docTab('aadhaar',this)">🪪 Aadhaar Seeding</div>
+        <div class="dt" onclick="docTab('bonafide',this)">🎓 Bonafide Certificate</div>
+        <div class="dt" onclick="docTab('disability',this)">♿ Disability Certificate</div>
+        <div class="dt" onclick="docTab('rti',this)">📁 RTI Application</div>
+        <div class="dt" onclick="docTab('minority',this)">🕌 Minority Certificate</div>
+      </div>
+      <div id="doc-content"></div>
+    </div>
+  </div>
+
+  <!-- ══ PANEL: RIGHTS ══ -->
+  <div class="panel" id="p-rights">
+    <div class="pg">
+      <div>
+        <div class="lbl-tag">Constitutional & Legal</div>
+        <div class="ph">Know Your Rights</div>
+        <div class="ps">Every right guaranteed to Indian citizens — explained without legal jargon.</div>
+      </div>
+      <div class="grid2">
+        <div class="rcard" style="border-left-color:var(--or);" onclick="openModal('fundamental')" id="r1-card">
+          <div class="rc-badge" style="background:var(--or3);color:var(--or);">Articles 12–35</div>
+          <div class="rc-title" id="r1-t">⚖️ Fundamental Rights</div>
+          <div class="rc-desc" id="r1-d">The 6 core constitutional rights — equality, freedom, religion, culture, education, and constitutional remedies guaranteed to every citizen.</div>
+          <div class="rc-link" id="r1-link">Read details →</div>
+        </div>
+        <div class="rcard" style="border-left-color:var(--blu);" onclick="openModal('minority')" id="r2-card">
+          <div class="rc-badge" style="background:var(--blu3);color:var(--blu);">Articles 25–30</div>
+          <div class="rc-title" id="r2-t">🕌 Minority Rights</div>
+          <div class="rc-desc" id="r2-d">Rights to practice religion, manage institutions, and preserve culture for religious and linguistic minorities across India.</div>
+          <div class="rc-link" id="r2-link">Read details →</div>
+        </div>
+        <div class="rcard" style="border-left-color:var(--grn);" onclick="openModal('scst')" id="r3-card">
+          <div class="rc-badge" style="background:var(--grnl);color:var(--grn);">SC/ST Act 1989</div>
+          <div class="rc-title" id="r3-t">🛡️ SC/ST Protections</div>
+          <div class="rc-desc" id="r3-d">Legal protections against caste-based atrocities, discrimination, untouchability, and reservation rights in education and employment.</div>
+          <div class="rc-link" id="r3-link">Read details →</div>
+        </div>
+        <div class="rcard" style="border-left-color:var(--pur);" onclick="openModal('women')" id="r4-card">
+          <div class="rc-badge" style="background:var(--purl);color:var(--pur);">DV Act / POSH</div>
+          <div class="rc-title" id="r4-t">♀️ Women's Rights</div>
+          <div class="rc-desc" id="r4-d">Protection from domestic violence, workplace harassment, equal pay, maternity benefits, anti-dowry laws — and how to use them.</div>
+          <div class="rc-link" id="r4-link">Read details →</div>
+        </div>
+        <div class="rcard" style="border-left-color:var(--teal);" onclick="openModal('disability')" id="r5-card">
+          <div class="rc-badge" style="background:var(--blu3);color:var(--blu);">RPwD Act 2016</div>
+          <div class="rc-title" id="r5-t">♿ Disability Rights</div>
+          <div class="rc-desc" id="r5-d">4% reservation in jobs, 5% in education, accessibility mandates, UDID card entitlements under the Rights of Persons with Disabilities Act.</div>
+          <div class="rc-link" id="r5-link">Read details →</div>
+        </div>
+        <div class="rcard" style="border-left-color:var(--yel);" onclick="openModal('rti')" id="r6-card">
+          <div class="rc-badge" style="background:var(--yell);color:var(--yel);">RTI Act 2005</div>
+          <div class="rc-title" id="r6-t">📁 Right to Information</div>
+          <div class="rc-desc" id="r6-d">Request any information from public authorities. 30-day response guarantee. How to file, appeal, and what you can access.</div>
+          <div class="rc-link" id="r6-link">Read details →</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PANEL: COMPLAINT WIZARD ══ -->
+  <div class="panel" id="p-complaint">
+    <div class="wiz-wrap">
+      <div class="wiz-sb">
+        <div class="wiz-sb-h">Filing Steps</div>
+        <div class="ws act" data-s="1"><div class="ws-n">1</div>Issue Type</div>
+        <div class="ws" data-s="2"><div class="ws-n">2</div>Describe</div>
+        <div class="ws" data-s="3"><div class="ws-n">3</div>Right Portal</div>
+        <div class="ws" data-s="4"><div class="ws-n">4</div>Documents</div>
+        <div class="ws" data-s="5"><div class="ws-n">5</div>Action Plan</div>
+      </div>
+      <div class="wiz-content">
+        <div class="wp act" id="ws1">
+          <div class="wp-h">What issue are you facing?</div>
+          <div class="wp-s">Select the closest match — we'll guide you to the right authority.</div>
+          <div class="grid2">
+            <div class="icard" onclick="selIssue('discrimination',this)"><div class="ic-ico">🚫</div><div><div class="ic-t">Caste / Religious Discrimination</div><div class="ic-d">SC/ST atrocity, untouchability, minority harassment</div></div></div>
+            <div class="icard" onclick="selIssue('harassment',this)"><div class="ic-ico">⚠️</div><div><div class="ic-t">Harassment / Violence</div><div class="ic-d">Domestic violence, workplace, POSH violation</div></div></div>
+            <div class="icard" onclick="selIssue('corruption',this)"><div class="ic-ico">💰</div><div><div class="ic-t">Corruption / Bribery</div><div class="ic-d">Official demanding bribe, fraud, misuse of power</div></div></div>
+            <div class="icard" onclick="selIssue('police',this)"><div class="ic-ico">👮</div><div><div class="ic-t">Police Misconduct</div><div class="ic-d">FIR refusal, illegal detention, custodial abuse</div></div></div>
+            <div class="icard" onclick="selIssue('scheme',this)"><div class="ic-ico">📋</div><div><div class="ic-t">Scheme / Scholarship Denied</div><div class="ic-d">Benefits rejected, NSP issues, ration card denied</div></div></div>
+            <div class="icard" onclick="selIssue('rights',this)"><div class="ic-ico">🏛️</div><div><div class="ic-t">Rights Violation</div><div class="ic-d">Fundamental rights, RTI denial, forced eviction</div></div></div>
+          </div>
+          <div class="wiz-nav"><button class="wbtn2 pri" id="wn1" onclick="wNext()" disabled>Next →</button></div>
+        </div>
+        <div class="wp" id="ws2">
+          <div class="wp-h">Describe your situation</div>
+          <div class="wp-s">The more detail you give, the better we can guide you.</div>
+          <div><label class="flbl" style="display:block;margin-bottom:6px;">What happened?</label><textarea class="finp" id="w-desc" rows="4" placeholder="Describe your situation briefly..."></textarea></div>
+          <div class="grid2">
+            <div><label class="flbl" style="display:block;margin-bottom:6px;">State / UT</label><select class="finp" id="w-state"><option value="">Select State</option><option>Maharashtra</option><option>Delhi</option><option>Uttar Pradesh</option><option>Bihar</option><option>Rajasthan</option><option>Karnataka</option><option>Tamil Nadu</option><option>West Bengal</option><option>Gujarat</option><option>Madhya Pradesh</option><option>Other</option></select></div>
+            <div><label class="flbl" style="display:block;margin-bottom:6px;">When did it happen?</label><input class="finp" type="date" id="w-date"></div>
+          </div>
+          <div class="wiz-nav"><button class="wbtn2" onclick="wPrev()">← Back</button><button class="wbtn2 pri" onclick="wNext()">Next →</button></div>
+        </div>
+        <div class="wp" id="ws3">
+          <div class="wp-h">Where to file your complaint</div>
+          <div class="wp-s">These are the exact portals and offices for your type of issue.</div>
+          <div id="portal-list"></div>
+          <div class="wiz-nav"><button class="wbtn2" onclick="wPrev()">← Back</button><button class="wbtn2 pri" onclick="wNext()">Next →</button></div>
+        </div>
+        <div class="wp" id="ws4">
+          <div class="wp-h">Documents you'll need</div>
+          <div class="box" id="doc-list"></div>
+          <div class="wiz-nav"><button class="wbtn2" onclick="wPrev()">← Back</button><button class="wbtn2 pri" onclick="wNext()">Next →</button></div>
+        </div>
+        <div class="wp" id="ws5">
+          <div class="wp-h">✅ Your Action Plan</div>
+          <div id="summary"></div>
+          <div class="box" style="background:var(--grnl);border-color:rgba(22,128,60,.15);margin-top:4px;">
+            <div style="font-weight:700;color:var(--grn);margin-bottom:5px;">💡 Pro Tips</div>
+            <div style="font-size:13px;color:var(--t2);line-height:1.7;">Keep copies of ALL documents submitted. Note your complaint reference number. Follow up after 30 days. If no response, escalate — First Appeal → Second Appeal → CIC/High Court Writ under Art. 226.</div>
+          </div>
+          <div class="wiz-nav"><button class="wbtn2" onclick="wReset()">Start Over</button><button class="wbtn2 pri" onclick="go('ai')">🤖 Ask CivicAI</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PANEL: LEGAL ══ -->
+  <div class="panel" id="p-legal">
+    <div class="pg">
+      <div>
+        <div class="lbl-tag">Know the System</div>
+        <div class="ph">Legal Guidance</div>
+        <div class="ps">How to navigate India's legal system and access free legal aid — step by step.</div>
+      </div>
+      <div class="box">
+        <div class="bxh">📋 How to File an FIR — Step by Step</div>
+        <div class="fir-timeline">
+          <div class="fstep"><div class="fs-dot">1</div><div class="fs-t">Police Station</div><div class="fs-d">Go to station in whose jurisdiction the incident occurred</div></div>
+          <div class="fstep"><div class="fs-dot">2</div><div class="fs-d">Ask SHO to register FIR — FREE, your legal right under Sec. 154 CrPC</div></div>
+          <div class="fstep"><div class="fs-dot">3</div><div class="fs-d">If refused, approach SP/DCP or file with Magistrate under Sec. 156(3) CrPC</div></div>
+          <div class="fstep"><div class="fs-dot">4</div><div class="fs-d">Always collect FREE copy. Note FIR number. Zero-FIR if crime outside jurisdiction.</div></div>
+        </div>
+      </div>
+      <div class="grid3">
+        <div class="lcard" style="border-top-color:var(--or);"><div class="lc-t">🏛️ NALSA — Free Legal Aid</div><div class="lc-d">National Legal Services Authority provides free lawyers for SC/ST, women, PwD, income &lt; ₹1L/year. Call <strong>15100</strong> or visit nalsa.gov.in</div></div>
+        <div class="lcard" style="border-top-color:var(--blu);"><div class="lc-t">📱 Apply Online</div><div class="lc-d">Apply at nalsa.gov.in for free legal services, Lok Adalat hearings, and pre-litigation mediation. No lawyer fees.</div></div>
+        <div class="lcard" style="border-top-color:var(--grn);"><div class="lc-t">✅ Who's Eligible?</div><div class="lc-d">SC/ST, women, children, PwD, trafficking victims, persons in custody, income &lt; ₹1 lakh/year — all eligible for free aid.</div></div>
+        <div class="lcard" style="border-top-color:var(--pur);"><div class="lc-t">⚖️ Lok Adalat</div><div class="lc-d">Disputes settled free of court fees. Final and binding award. Best for motor accidents, family disputes, labour cases.</div></div>
+        <div class="lcard" style="border-top-color:var(--yel);"><div class="lc-t">📋 Writ Petition</div><div class="lc-d">Go directly to High Court (Art. 226) or Supreme Court (Art. 32) for fundamental rights violations. Urgent matters get speedy hearing.</div></div>
+        <div class="lcard" style="border-top-color:var(--or);"><div class="lc-t">🏪 Paralegal Volunteers</div><div class="lc-d">NALSA-trained volunteers in every district provide door-step legal guidance. Contact your District Legal Services Authority (DLSA).</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PANEL: GRIEVANCE PORTALS ══ -->
+  <div class="panel" id="p-grievance">
+    <div class="pg">
+      <div>
+        <div class="lbl-tag">Official Channels</div>
+        <div class="ph">Grievance Portals Directory</div>
+        <div class="ps">All official complaint portals in one place — sorted by the type of issue. Direct links, no searching needed.</div>
+      </div>
+      <div class="box">
+        <div class="bxh">🏛️ Central Government Portals</div>
+        <div id="griev-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PANEL: NSP TRACKER ══ -->
+  <div class="panel" id="p-tracker">
+    <div class="tracker-wrap">
+      <div>
+        <div class="lbl-tag">🔍 NSP Help</div>
+        <div class="ph">NSP Scholarship Status Guide</div>
+        <div class="ps">Understanding where your application is stuck — and what to do at each stage.</div>
+      </div>
+      <div class="box">
+        <div class="bxh">📊 Application Journey — 5 Stages</div>
+        <div class="tr-timeline">
+          <div class="trt-step">
+            <div class="trt-dot" style="background:var(--grnl);color:var(--grn);border:2px solid var(--grn);">1</div>
+            <div class="trt-body">
+              <div class="trt-t">Student Submission</div>
+              <div class="trt-d">You fill and submit on scholarships.gov.in. <strong>Common issues:</strong> wrong marks (enter %, not CGPA), Aadhaar name mismatch, file size &gt;200KB.</div>
+            </div>
+          </div>
+          <div class="trt-step">
+            <div class="trt-dot" style="background:var(--yell);color:var(--yel);border:2px solid var(--yel);">2</div>
+            <div class="trt-body">
+              <div class="trt-t">Institute Nodal Officer (INO) Verification</div>
+              <div class="trt-d">Your college/school verifies your enrollment and documents. <strong>If stuck:</strong> Visit your accounts/scholarship cell — they may not be aware of your application.</div>
+            </div>
+          </div>
+          <div class="trt-step">
+            <div class="trt-dot" style="background:var(--blu3);color:var(--blu);border:2px solid var(--blu);">3</div>
+            <div class="trt-body">
+              <div class="trt-t">District / State Nodal Officer (DNO/SNO) Verification</div>
+              <div class="trt-d">Government officer verifies caste/income certificates. <strong>If stuck:</strong> Visit the District Social Welfare Office with originals. Application may be "Defective" — check your dashboard.</div>
+            </div>
+          </div>
+          <div class="trt-step">
+            <div class="trt-dot" style="background:var(--or3);color:var(--or);border:2px solid var(--or);">4</div>
+            <div class="trt-body">
+              <div class="trt-t">Ministry Approval</div>
+              <div class="trt-d">Ministry of Social Justice / Minority Affairs approves. <strong>Delays common during Oct–Jan.</strong> Check NSP dashboard for "Approved" status.</div>
+            </div>
+          </div>
+          <div class="trt-step">
+            <div class="trt-dot" style="background:var(--grnl);color:var(--grn);border:2px solid var(--grn);">5</div>
+            <div class="trt-body">
+              <div class="trt-t">DBT Transfer via PFMS</div>
+              <div class="trt-d">Money sent to your Aadhaar-linked bank account. <strong>If not received:</strong> Check Aadhaar seeding at your bank, verify IFSC/account number entered is correct, use pfms.nic.in to track.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="bxh">⚠️ Top Rejection Reasons & Fixes</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="background:var(--bg);border-radius:10px;padding:12px 14px;border:1px solid var(--bdr2);display:flex;gap:12px;">
+            <div style="font-size:18px;">❌</div>
+            <div><div style="font-size:13px;font-weight:700;margin-bottom:3px;">Marks entered as CGPA instead of %</div><div style="font-size:12.5px;color:var(--t2);">Fix: Convert using your institute's conversion formula (e.g., CGPA × 9.5 for CBSE). Enter percentage, not CGPA.</div></div>
+          </div>
+          <div style="background:var(--bg);border-radius:10px;padding:12px 14px;border:1px solid var(--bdr2);display:flex;gap:12px;">
+            <div style="font-size:18px;">❌</div>
+            <div><div style="font-size:13px;font-weight:700;margin-bottom:3px;">Aadhaar not seeded to bank account</div><div style="font-size:12.5px;color:var(--t2);">Fix: Go to your bank branch or use net banking → Service Requests → Link Aadhaar. Or use NPCI BASE platform (npci.org.in/what-we-do/aadhaar-seeding).</div></div>
+          </div>
+          <div style="background:var(--bg);border-radius:10px;padding:12px 14px;border:1px solid var(--bdr2);display:flex;gap:12px;">
+            <div style="font-size:18px;">❌</div>
+            <div><div style="font-size:13px;font-weight:700;margin-bottom:3px;">Income certificate signed by wrong authority</div><div style="font-size:12.5px;color:var(--t2);">Fix: Must be signed by SDM/Tehsildar/Circle Officer. Notary signatures are NOT accepted. Get a fresh certificate from your local SDM office.</div></div>
+          </div>
+          <div style="background:var(--bg);border-radius:10px;padding:12px 14px;border:1px solid var(--bdr2);display:flex;gap:12px;">
+            <div style="font-size:18px;">❌</div>
+            <div><div style="font-size:13px;font-weight:700;margin-bottom:3px;">Document file size exceeds 200KB</div><div style="font-size:12.5px;color:var(--t2);">Fix: Use ilovepdf.com or compress PDF/JPEG online. NSP only accepts PDF/JPEG under 200KB per file.</div></div>
+          </div>
+          <div style="background:var(--bg);border-radius:10px;padding:12px 14px;border:1px solid var(--bdr2);display:flex;gap:12px;">
+            <div style="font-size:18px;">❌</div>
+            <div><div style="font-size:13px;font-weight:700;margin-bottom:3px;">Applied under wrong home state</div><div style="font-size:12.5px;color:var(--t2);">Fix: You must apply under your HOME state (where you're domiciled), NOT the state where you study. The Application ID is tied to your home state and cannot be changed.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="box" style="background:var(--teal3);border-color:rgba(11,123,107,.15);">
+        <div style="font-weight:700;color:var(--teal);font-family:system-ui,sans-serif;font-size:15px;margin-bottom:8px;">🆘 If Scholarship is Delayed or Rejected</div>
+        <div style="font-size:13px;color:var(--t2);line-height:1.7;">1. Check status at <strong>scholarships.gov.in</strong> → your dashboard → "Application Status" <br>2. If "Defective" — fix the flagged issue and resubmit within the defective verification window <br>3. File NSP Grievance: Login → Services → Grievance Registration <br>4. Call NSP Helpdesk: <strong>0120-6619540</strong> (Mon–Fri, 10AM–6PM) <br>5. Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="563e333a263233253d1638252678313920783f38">[email&#160;protected]</a> with your Application ID</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PANEL: HELPLINES ══ -->
+  <div class="panel" id="p-helplines">
+    <div class="pg">
+      <div>
+        <div class="lbl-tag">Emergency & Specialized</div>
+        <div class="ph">Helpline Directory</div>
+        <div class="ps">Direct numbers for every situation — available 24/7 unless noted.</div>
+      </div>
+      <div class="grid3" id="hline-grid"></div>
+    </div>
+  </div>
+
+  <!-- ══ PANEL: AI ══ -->
+  <div class="panel" id="p-ai">
+    <div class="ai-shell">
+      <div class="ai-hd">
+        <div class="ai-av">🤖</div>
+        <div><div class="ai-nm" id="ai-name">CivicAI Assistant</div><div class="ai-st" id="ai-status-txt"><span class="ai-dot"></span>Online — Ready to help</div></div>
+        <div class="ai-badge" id="ai-badge">⚡ Local KB — No API</div>
+      </div>
+      <div class="ai-msgs" id="ai-msgs">
+        <div class="amsg bot"><div class="abub">Namaste! 🙏 I'm CivicAI.<br><br>I can help you with: scholarship eligibility & NSP issues, document procedures (caste/income/domicile certificates), constitutional rights (SC/ST, minority, women, disability), FIR filing, free legal aid via NALSA, RTI applications, grievance portals, and more.<br><br>What can I help you with today?</div></div>
+      </div>
+      <div class="ai-qr" id="ai-qr">
+        <button class="qr-b" onclick="sendQ('My NSP scholarship payment has not been received. What should I do?')">💰 Scholarship not received</button>
+        <button class="qr-b" onclick="sendQ('How do I get a caste certificate?')">📄 Caste certificate</button>
+        <button class="qr-b" onclick="sendQ('How do I file an FIR if police refuse?')">👮 FIR refusal</button>
+        <button class="qr-b" onclick="sendQ('What is free legal aid and how do I get it?')">⚖️ Free legal aid</button>
+        <button class="qr-b" onclick="sendQ('What minority scholarships am I eligible for?')">🎓 Minority scholarships</button>
+        <button class="qr-b" onclick="sendQ('How do I file an RTI application?')">📁 File RTI</button>
+      </div>
+      <div class="ai-inp-row">
+        <input class="ai-inp" id="ai-inp" placeholder="Ask about rights, documents, schemes, legal options..." onkeydown="if(event.key==='Enter')sendMsg()">
+        <button class="ai-send" id="ai-send-btn" onclick="sendMsg()">Send ➤</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+        <div class="ph">RTI Application Builder</div>
+        <div class="ps">Fill in your details, pick a template, and get a ready-to-print RTI letter — correctly formatted, legally sound.</div>
+      </div>
+
+      <div class="box rti-form-box">
+        <div class="bxh">👤 Your Details</div>
+        <div class="grid2" style="gap:12px;margin-bottom:14px;">
+          <div class="fg"><label class="flbl">Your Full Name *</label><input class="finp" id="rti-name" placeholder="e.g. Ramesh Kumar Singh"></div>
+          <div class="fg"><label class="flbl">Your Complete Address *</label><input class="finp" id="rti-address" placeholder="House No., Street, City, State, PIN"></div>
+        </div>
+        <div class="fg" style="margin-bottom:14px;">
+          <label class="flbl">Which authority are you filing with? *</label>
+          <select class="finp" id="rti-authority">
+            <option value="">Select authority type</option>
+            <option value="pio_central">Central Govt Ministry / Department</option>
+            <option value="pio_state">State Govt Department (Revenue, Education, etc.)</option>
+            <option value="pio_psu">Public Sector Undertaking (PSU)</option>
+            <option value="pio_local">Municipality / Panchayat / Local Body</option>
+            <option value="pio_court">Court / Judiciary (administrative info)</option>
+          </select>
+        </div>
+        <div class="fg" style="margin-bottom:14px;">
+          <label class="flbl">Subject Line (optional)</label>
+          <input class="finp" id="rti-subject" placeholder="e.g. Status of NSP Scholarship Application ID XXXXXX">
+        </div>
+        <label style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--t2);cursor:pointer;margin-bottom:16px;">
+          <input type="checkbox" id="rti-bpl" style="width:16px;height:16px;accent-color:var(--or);"> I am a BPL cardholder (fee waived — save ₹10)
+        </label>
+      </div>
+
+      <div class="box">
+        <div class="bxh">📋 What do you want to know? Pick a template</div>
+        <div class="rti-templates">
+          <button class="rti-tmpl-btn" onclick="rtiSelectTemplate('nsp',this)">🎓 NSP Scholarship</button>
+          <button class="rti-tmpl-btn" onclick="rtiSelectTemplate('caste',this)">📄 Caste / Income Certificate</button>
+          <button class="rti-tmpl-btn" onclick="rtiSelectTemplate('fir',this)">👮 FIR Copy / Non-Registration</button>
+          <button class="rti-tmpl-btn" onclick="rtiSelectTemplate('scheme',this)">📋 Scheme Denial</button>
+          <button class="rti-tmpl-btn" onclick="rtiSelectTemplate('custom',this)">✏️ Write My Own</button>
+        </div>
+        <div class="fg" style="margin-top:14px;">
+          <label class="flbl">Your Query (edit the template as needed) *</label>
+          <textarea class="finp" id="rti-query-text" rows="7" placeholder="Select a template above, or write your specific information request here. Be precise — mention application numbers, dates, officer names if you know them."></textarea>
+        </div>
+        <div style="margin-top:16px;">
+          <button class="elig-btn" onclick="rtiGenerate()">📄 Generate RTI Letter</button>
+          <span style="font-size:12px;color:var(--t3);margin-left:12px;">Ready-to-print in 2 seconds</span>
+        </div>
+      </div>
+
+      <div class="box" id="rti-output" style="display:none;border:2px solid var(--grn);">
+        <div class="bxh" style="color:var(--grn);">✅ Your RTI Letter is Ready</div>
+        <textarea class="finp rti-letter" id="rti-letter-text" rows="22" readonly style="font-family:monospace;font-size:12.5px;background:var(--bg);line-height:1.8;"></textarea>
+        <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;">
+          <button class="elig-btn" id="rti-copy-btn" onclick="rtiCopy()" style="background:var(--teal);">📋 Copy to Clipboard</button>
+          <button class="elig-btn" onclick="rtiPrint()" style="background:var(--blu);">🖨️ Print / Save as PDF</button>
+        </div>
+        <div class="dl-tip" style="margin-top:14px;">💡 Send by Speed Post (keep receipt as proof). For central govt, also file online at <a href="https://rtionline.gov.in" target="_blank" style="color:var(--or);">rtionline.gov.in</a>. Fee: ₹10 IPO/DD/Court Fee Stamp payable to Accounts Officer.</div>
+      </div>
+
+      <div class="box" style="background:var(--or3);border-color:var(--or4);">
+        <div class="bxh">⚡ RTI Quick Facts</div>
+        <div class="grid3" style="gap:10px;">
+          <div style="background:var(--card);border-radius:10px;padding:13px;border:1px solid var(--bdr);text-align:center;">
+            <div style="font-size:26px;font-weight:700;color:var(--or);font-family:system-ui,sans-serif;">30</div>
+            <div style="font-size:11.5px;color:var(--t3);margin-top:3px;">Days for PIO to reply</div>
+          </div>
+          <div style="background:var(--card);border-radius:10px;padding:13px;border:1px solid var(--bdr);text-align:center;">
+            <div style="font-size:26px;font-weight:700;color:var(--teal);font-family:system-ui,sans-serif;">₹10</div>
+            <div style="font-size:11.5px;color:var(--t3);margin-top:3px;">Application fee (free for BPL)</div>
+          </div>
+          <div style="background:var(--card);border-radius:10px;padding:13px;border:1px solid var(--bdr);text-align:center;">
+            <div style="font-size:26px;font-weight:700;color:var(--red);font-family:system-ui,sans-serif;">₹25K</div>
+            <div style="font-size:11.5px;color:var(--t3);margin-top:3px;">Max penalty on PIO for refusal</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- MODAL -->
+<div class="modal-ov" id="modal" onclick="closeModal()">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <div class="modal-hd"><div class="modal-title" id="modal-title"></div><button class="modal-cls" onclick="closeModal()">✕</button></div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/ui.js"></script>
+<script>
+// ── NAVIGATION ──────────────────────────────────────────────────
+function go(id){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.ni').forEach(n=>n.classList.remove('active'));
+  document.getElementById('p-'+id).classList.add('active');
+  const ni=document.querySelector('[data-p="'+id+'"]');
+  if(ni) ni.classList.add('active');
+  const t=document.getElementById('abar-title');
+  if(t){ t.style.animation='none'; t.offsetHeight; t.style.animation='';
+    const lang=window.currentLang||'en';
+    const T=window.LANG&&window.LANG[lang];
+    t.textContent=(T&&T.titles&&T.titles[id])||titles[id]||id;
+  }
+  window.currentPanel=id;
+  if(id==='home') setTimeout(animCounters, 80);
+  if(id==='helplines'&&!document.getElementById('hline-grid').innerHTML.trim()) renderHelplines();
+  if(id==='grievance'&&!document.getElementById('griev-list').innerHTML.trim()) renderGrievance();
+  if(id==='documents') renderDocTab('caste');
+}
+
+// INIT
+go('home');
+</script>
+<script src="js/lang.js"></script>
+<script src="js/anim.js"></script>
+</body>
+</html>
